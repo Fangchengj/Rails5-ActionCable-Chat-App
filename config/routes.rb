@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
   get 'chat_rooms/index'
 
   get 'chat_rooms/create'
@@ -17,6 +19,5 @@ Rails.application.routes.draw do
 
   get 'chat_room_controller/new'
 
-  devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users, controllers: {registrations: "registrations"}
 end
