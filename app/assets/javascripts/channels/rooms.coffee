@@ -1,4 +1,5 @@
-jQuery(document).on 'ready page:load', ->
+$ ->
+  console.log("page is ready")
   messages = $('#messages')
   if $('#messages').length > 0
     messages_to_bottom = -> messages.scrollTop(messages.prop("scrollHeight"))
@@ -22,6 +23,7 @@ jQuery(document).on 'ready page:load', ->
   $('#new_message').submit (e) ->
     $this = $(this)
     textarea = $this.find('#message_body')
+    console.log('we got to textarea')
     if $.trim(textarea.val()).length > 1
       App.global_chat.send_message textarea.val(), messages.data('chat_room_id')
       textarea.val('')
