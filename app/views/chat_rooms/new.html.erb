@@ -1,5 +1,5 @@
 <h1>Add Chat Room</h1>
-<%= form_for @chat_room %>
+<%= form_for @chat_room do |f| %>
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, autofocus: true, class: 'form-control' %>
