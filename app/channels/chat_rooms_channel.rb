@@ -8,6 +8,7 @@ ChatRoomsChannel < ApplicationCable::Channel
   end
 
   def send_message(data)
+    current_user.message.create!(body: data['message'], chat_room_id: data['chat_room_id'])
   end
 
 end
