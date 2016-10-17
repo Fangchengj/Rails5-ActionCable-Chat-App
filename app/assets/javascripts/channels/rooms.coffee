@@ -1,6 +1,6 @@
-App.global_cat = App.cable.subscription.create {
+App.global_cat = App.cable.subscriptions.create {
   channel: "ChatRoomsChannel"
-  chat_room_id ''
+  chat_room_id: ''
   },
   connected: ->
 
@@ -9,4 +9,4 @@ App.global_cat = App.cable.subscription.create {
   received: (data)->
 
   send_message: (message, chat_room_id) ->
-    @perform 'send_message', message: message, chat_room_id: chat_room_id  
+    @perform 'send_message', message: message, chat_room_id: chat_room_id
