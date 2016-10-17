@@ -1,6 +1,10 @@
+$(document).on 'ready page:load', ->
+messages = $('#messages')
+if $('#messages').length > 0
+
 App.global_cat = App.cable.subscriptions.create {
   channel: "ChatRoomsChannel"
-  chat_room_id: ''
+  chat_room_id: messages.data('chat-room-id')
   },
   connected: ->
 
