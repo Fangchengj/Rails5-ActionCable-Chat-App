@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'redis', '~> 3.0'
 gem 'devise'
 gem 'bootstrap'
+gem 'turbolinks'
 
 group :development, :test do
   gem 'byebug', platform: :mri
